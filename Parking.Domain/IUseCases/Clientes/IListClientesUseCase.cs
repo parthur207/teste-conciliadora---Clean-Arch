@@ -7,5 +7,5 @@ public record ListClientesInput(int Pagina = 1, int Tamanho = 10, string? Filtro
 
 public interface IListClientesUseCase
 {
-    Task<ResponseModel<IEnumerable<ClienteEntity>>> ExecuteAsync(ListClientesInput input, CancellationToken ct = default);
+    Task<ResponseModel<PagedResult<ClienteEntity>>> ExecuteAsync(ListClientesInput input, CancellationToken ct = default);
 }
