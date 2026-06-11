@@ -1,12 +1,9 @@
 using Parking.Application.IRepositories;
 using Parking.Application.Mappers;
-using Parking.Domain.Common;
 using Parking.Domain.Entities;
 using Parking.Domain.Enums;
 using Parking.Domain.IUseCases.Clientes;
 using Parking.Domain.ResponsePattern;
-using System.Net.NetworkInformation;
-using System.Reflection.Metadata;
 
 namespace Parking.Application.UseCases.Clientes;
 
