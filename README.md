@@ -234,27 +234,3 @@ O projeto referencia `FluentValidation` no `.csproj` mas não o usa. Para manter
 
 ---
 
-## Estrutura de arquivos alterados
-
-```
-src/
-├── backend/
-│   ├── Models/
-│   │   └── VeiculoHistorico.cs          [NOVO] histórico de propriedade de veículo
-│   ├── Data/
-│   │   └── AppDbContext.cs              [MOD] + DbSet<VeiculoHistorico> + mapping
-│   ├── Program.cs                       [MOD] inicialização idempotente da tabela
-│   ├── Controllers/
-│   │   ├── ClientesController.cs        [MOD] validação + unicidade no PUT
-│   │   ├── VeiculosController.cs        [MOD] histórico + clienteNome + validações
-│   │   ├── FaturasController.cs         [MOD] clienteNome no retorno via JOIN
-│   │   └── ImportController.cs         [MOD] erros estruturados + validação de colunas
-│   └── Services/
-│       └── FaturamentoService.cs        [MOD] faturamento proporcional por dias
-└── frontend/
-    └── src/pages/
-        ├── ClientesPage.jsx             [MOD] formulário de edição + erros + mais colunas
-        ├── VeiculosPage.jsx             [MOD] edição com cliente + clienteNome na tabela
-        ├── FaturamentoPage.jsx          [MOD] clienteNome + observação + UX
-        └── CsvUploadPage.jsx            [MOD] display visual de erros linha a linha
-```
