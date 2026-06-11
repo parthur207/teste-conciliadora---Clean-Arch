@@ -10,5 +10,5 @@ public class ClienteEntity
     public decimal? ValorMensalidade { get; set; }
     public DateTime DataInclusao { get; set; } = DateTime.UtcNow;
 
-    public List<Veiculo> Veiculos { get; set; } = new();
+    public List<VeiculoEntity> Veiculos { get; set; } = new();
 }
