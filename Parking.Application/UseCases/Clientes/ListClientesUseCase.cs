@@ -12,7 +12,7 @@ public class ListClientesUseCase : IListClientesUseCase
 
     public ListClientesUseCase(IClienteRepository repository) => _repository = repository;
 
-    public async Task<ResponseModel<PagedResult<Cliente>>> ExecuteAsync(ListClientesInput input, CancellationToken ct = default)
+    public async Task<ResponseModel<PagedResult<ClienteEntity>>> ExecuteAsync(ListClientesInput input, CancellationToken ct = default)
     {
         var (total, itens) = await _repository.ListAsync(input.Pagina, input.Tamanho, input.Filtro, input.Mensalista, ct);
         return new ResponseModel<PagedResult<ClienteEntity>>(new PagedResult<ClienteEntity>(total, itens), null, ResponseStatusEnum.Success);

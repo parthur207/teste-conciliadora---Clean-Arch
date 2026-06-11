@@ -19,7 +19,7 @@ public class DeleteClienteUseCase : IDeleteClienteUseCase
 
         var temVeiculos = await _repository.HasVeiculosAsync(id, ct);
         if (temVeiculos)
-            return new SimpleResponseModel("Cliente possui veículos associados. Transfira ou remova os veículos antes de excluir.", ResponseStatusEnum.BadRequest);
+            return new SimpleResponseModel("Cliente possui veículos associados. Transfira ou remova os veículos antes de excluir.", ResponseStatusEnum.Error);
 
         _repository.Remove(cliente);
         await _repository.SaveChangesAsync(ct);

@@ -4,7 +4,6 @@ using Parking.Domain.Entities;
 using Parking.Domain.Enums;
 using Parking.Domain.IUseCases.Clientes;
 using Parking.Domain.ResponsePattern;
-using System.Net.NetworkInformation;
 
 namespace Parking.Application.UseCases.Clientes;
 
@@ -17,7 +16,7 @@ public class UpdateClienteUseCase : IUpdateClienteUseCase
     public async Task<ResponseModel<ClienteEntity>> ExecuteAsync(ClienteUpdateInput input, CancellationToken ct = default)
     {
         if (string.IsNullOrWhiteSpace(input.Nome))
-            return new ResponseModel<ClienteEntity>(null, "O nome do cliente é obrigatório.", ResponseStatusEnum.Error)
+            return new ResponseModel<ClienteEntity>(null, "O nome do cliente é obrigatório.", ResponseStatusEnum.Error);
 
         var cliente = await _repository.GetByIdAsync(input.Id, ct);
 
