@@ -51,7 +51,7 @@ public class VeiculosController : ControllerBase
         {
             ResponseStatusEnum.Error => BadRequest(response),
             ResponseStatusEnum.Conflict => Conflict(response),
-            ResponseStatusEnum.Success => CreatedAtAction(nameof(GetById), new { id = response.Data!.Id }, response),
+            ResponseStatusEnum.Success => CreatedAtAction(nameof(GetById), new { id = response.Content!.Id }, response),
             _ => BadRequest(response)
         };
     }
